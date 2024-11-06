@@ -4,13 +4,14 @@ import 'package:grocery_app/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'consts/theme_data.dart';
+import 'screens/btm_bar.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -44,7 +45,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: Styles.themeData(themeProvider.getDarkTheme, context),
-            home: HomeScreen());
+            home: const BottomBarScreen());
       }),
     );
   }
