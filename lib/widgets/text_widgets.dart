@@ -7,26 +7,23 @@ class TextWidget extends StatelessWidget {
     required this.color,
     required this.textSize,
     this.isTitle = false,
-    this.maxLine = 10,
+    this.maxLines = 10,
   }) : super(key: key);
-
   final String text;
   final Color color;
   final double textSize;
-  final bool isTitle;
-  final int maxLine;
-
+  bool isTitle;
+  int maxLines = 10;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      maxLines: maxLine,
-      overflow: TextOverflow.ellipsis,
+      maxLines: maxLines,
       style: TextStyle(
-        fontSize: textSize,
-        color: color,
-        fontWeight: isTitle ? FontWeight.bold : FontWeight.normal,
-      ),
+          overflow: TextOverflow.ellipsis,
+          color: color,
+          fontSize: textSize,
+          fontWeight: isTitle ? FontWeight.bold : FontWeight.normal),
     );
   }
 }
